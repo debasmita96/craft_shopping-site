@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<link rel="stylesheet" href="css/adminlogin.css">
+		<style>
+			body{
+				background-image:url("images/bg1.jpg");
+				background-repeat:no-repeat;
+				background-size:cover;}  
+		</style>
+		
+		<script>
+			var attempt=3;
+			function validate(){
+				var username = document.myform.username.value;
+				var password = document.myform.password.value;
+ 
+				if (username==null || username==""){
+					alert("Username can't be blank");
+					return false;
+				}
+				else if (password==null || password==""){
+					alert("password can't be blank");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<div class="inner">				
+				<form id="form_id" action="validadmin.php" method="post" name="myform">
+					<h3>Sign In</h3>
+					<div class="form-holder active">
+						<input type="text" placeholder="username" class="form-control" id="username" name="username" required>
+					</div>
+					
+					<div class="form-holder">
+						<input type="password" placeholder="Password" class="form-control" name="password" id="password"required>
+					</div>
+					
+					<div>
+						<button id="submit" onclick="validate()"> Login </button>						
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
